@@ -15,7 +15,7 @@ function Posts({setCurrentId, currentId}){
 		<div className="flex flex-wrap">
 			{posts.map((e)=>{
 				return (
-				<Post key={e._id} id={e._id} selectedFile={e.selectedFile} title={e.title} message={e.message} createdAt = {e.createdAt} creator = {e.creator} tags = {e.tags} onEdit={cis}/>
+				<Post key={e._id} id={e._id} likeCount={e.likeCount} selectedFile={e.selectedFile} title={e.title} message={e.message} createdAt = {e.createdAt} creator = {e.creator} tags = {e.tags} onEdit={cis}/>
 			);
 		})
 			}			
