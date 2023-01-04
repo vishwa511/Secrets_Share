@@ -10,9 +10,24 @@ function Posts({setCurrentId, currentId}){
 		setCurrentId(id);
 		console.log(currentId);
 	}
+	const len = posts.length;
+	console.log(`lenght is ${len}`);
 
 	return(
-		<div className="flex flex-wrap">
+		<div className="flex flex-wrap w-full">
+			<div className="w-full">
+				{len!=0?
+				<div className="flex items-center justify-center space-x-2">
+					<h1 className="font-mono text-3xl">Here are the posts..Enjoy your memories :)</h1>
+				</div>
+				:
+				<div className="flex items-center justify-center h-screen space-x-2 animate-bounce">
+					<div className="w-8 h-8 bg-blue-400 rounded-full"></div>
+					<div className="w-8 h-8 bg-green-400 rounded-full"></div>
+					<div className="w-8 h-8 bg-black rounded-full"></div>
+				</div>
+				}
+			</div>
 			{posts.map((e)=>{
 				return (
 				<Post key={e._id} id={e._id} likeCount={e.likeCount} selectedFile={e.selectedFile} title={e.title} message={e.message} createdAt = {e.createdAt} creator = {e.creator} tags = {e.tags} onEdit={cis}/>
