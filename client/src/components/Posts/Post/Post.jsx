@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deletePost, likePost } from "../../../actions/posts";
+import moment from "moment";
 
 function Post(props){
 	
@@ -13,6 +14,13 @@ function Post(props){
 	return(
 	<div className="p-10">  
     <div className="max-w-sm overflow-hidden bg-white rounded shadow-2xl">
+	<div className="flex items-center">
+          <img className="mr-4 rounded-full w-14 h-14" src="https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg" alt="Avatar of Writer"/>
+          <div className="text-md">
+            <p className="font-bold leading-none text-gray-900">{props.creator}</p>
+            <p className="text-gray-600">{moment(props.createdAt).fromNow()}</p>
+          </div>
+        </div>
       <img className="w-full" src={props.selectedFile}alt="Mountain"/>
       <div className="px-6 py-4">
         <div className="mb-2 text-xl font-bold">{props.title}</div>
@@ -21,9 +29,7 @@ function Post(props){
         </p>
       </div>
       <div className="px-6 pt-4 pb-2">
-        <span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">{props.tags}</span>
-        <span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">{props.createdAt}</span>
-        <span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">{props.creator}</span>
+			{props.tags.map((tag) =><span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full"> #{tag}</span>)}       
       </div>
 	  <div className="flex justify-between px-6 pt-4 pb-2">
 			<button className="">
