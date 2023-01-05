@@ -14,7 +14,7 @@ function Posts({setCurrentId, currentId}){
 	console.log(`lenght is ${len}`);
 
 	return(
-		<div className="flex flex-wrap w-full">
+		<div className="flex flex-wrap justify-center w-full">
 			<div className="w-full">
 				{len!=0?
 				<div className="flex items-center justify-center space-x-2">

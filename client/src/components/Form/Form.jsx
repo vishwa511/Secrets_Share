@@ -43,14 +43,15 @@ function Form({currentId, setCurrentId}){
 	}
  
 	return( 
-		<div className="m-10">
-			<h3 className="mt-0 mb-2 text-3xl font-medium leading-tight text-black">{currentId?'Editing':'Creating'} a post ?</h3>
-			<form className="w-full max-w-lg">
-  <div className="flex flex-wrap mb-6 -mx-3">
-    <div className="w-full px-3">
-      <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"htmlFor="grid-password">
-        Creator Name
-      </label>
+	<div className="">
+		<div className="flex flex-col p-10 m-10 bg-gray-400 border border-gray-100 rounded-md place-items-center bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20">
+			<h3 className="mt-0 mb-2 text-3xl font-medium leading-tight text-white">{currentId?'Editing':'Creating'} a post ?</h3>
+		<form className="w-full max-w-lg">
+			<div className="flex flex-wrap mb-6 -mx-3">
+				<div className="w-full px-3">
+				<label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"htmlFor="grid-password">
+					Creator Name
+				</label>
       <input className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="creator" value={postData.creator} onChange={(e) => setPostData({...postData, creator: e.target.value})} type="text" placeholder="John Doe"/>
     </div>
   </div>
@@ -107,6 +108,7 @@ function Form({currentId, setCurrentId}){
 </div>
   </div>
 </form>
+</div>
 </div>
 	)
 }
