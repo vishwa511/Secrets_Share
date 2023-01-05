@@ -67,7 +67,7 @@ function Form({currentId, setCurrentId}){
       <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" htmlFor="grid-password">
         Tags
       </label>
-      <input className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="creator" value={postData.tags} onChange={(e) => setPostData({...postData, tags: e.target.value.split(',')})} type="text" placeholder="fun, masti, enjoy"/>
+      <input className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="creator" value={postData.tags} onChange={(e) => setPostData({...postData, tags: e.target.value.split(',')})} type="text" placeholder="fun,masti,enjoy"/>
     </div>
   </div>
   <div className="flex flex-wrap mb-6 -mx-3">
@@ -75,7 +75,7 @@ function Form({currentId, setCurrentId}){
       <label className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase" htmlFor="grid-password">
         Message
       </label>
-      <input className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="message" value={postData.message} onChange={(e) => setPostData({...postData, message: e.target.value})} type="text" placeholder="He is gay"/>
+      <input className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500" name="message" value={postData.message} onChange={(e) => setPostData({...postData, message: e.target.value})} type="text" placeholder="He is good boy"/>
     </div>
   </div>
   <div className="">
