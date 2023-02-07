@@ -1,23 +1,46 @@
 import React from "react";
 import Button from "./Button";
-
+import {Link} from "react-router-dom";
+import './nav.css'
 function Nav(){
+
+
+	const user = null;
+
+
+
 	return(
 		<div>
 			
 				
-<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+<nav class="bordersss border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
-  <a href="https://flowbite.com/" class="flex items-center">
+  <Link className="flex"	to="/" exact>
       <img className="w-10" src="https://logos-world.net/wp-content/uploads/2020/05/Stranger-Things-Logo.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
       <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Secrets!!</span>
-  </a>
+  </Link>
   <div class="flex items-center md:order-2">
-		<Button value="Login/Logout"/>
-		<h1>user name</h1>
-      <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-        <img class="w-8 h-8 rounded-full" src="https://spng.pngfind.com/pngs/s/5-52097_avatar-png-pic-vector-avatar-icon-png-transparent.png" alt="user photo"/>
-      </button>
+
+	{user ? (
+		<div>
+			<img class="w-8 h-8 rounded-full" src="https://spng.pngfind.com/pngs/s/5-52097_avatar-png-pic-vector-avatar-icon-png-transparent.png" alt="user photo"/>
+			<h1>{user.result.name}</h1>
+			<Button value="Logout"/>
+			
+		</div>
+	) : (
+		<div>
+			<Link
+				// className="navbar-item"
+				// activeClassName="is-active"
+				to="/auth"
+				exact>
+				<Button component = {Link} to="/auth" value="Login"/>
+			</Link>
+		</div>
+	)}
+      
+
 
   </div>
   {/* <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
