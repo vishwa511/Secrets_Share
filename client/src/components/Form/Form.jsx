@@ -34,7 +34,6 @@ function Form({currentId, setCurrentId}){
 			dispatch(updatePost(currentId, postData));
 		}
 		else{
-			
 			dispatch(createPost(postData));
 			clearForm();
 		}

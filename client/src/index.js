@@ -7,14 +7,20 @@ import { Provider } from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers'
+import { BrowserRouter } from "react-router-dom"
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+	<BrowserRouter>
+
 	<Provider store = {store}>
     <App />
 	</Provider>
+
+	</BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
