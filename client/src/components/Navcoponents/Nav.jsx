@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import Button from "./Button";
 import {Link} from "react-router-dom";
 import './nav.css'
+import { useDispatch } from "react-redux";
+import { useNavigate, useLocation } from 'react-router-dom';
+
 function Nav(){
 
+	const dispatch = useDispatch();
+	const location = useLocation();
+	const navigate = useNavigate();
+	const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
-	const user = null;
+	console.log(user);
 
+	useEffect(() =>{
+		const token = user?.token;
+		
+		//JWT
+
+		setUser(JSON.parse(localStorage.getItem('profile')));
+	}, [location]);
+
+	const logout = () =>{
+		dispatch({type: 'LOGOUT'});
+		navigate('/');
+		setUser(null);
+	}
 
 
 	return(
@@ -22,10 +42,16 @@ function Nav(){
   <div class="flex items-center md:order-2">
 
 	{user ? (
-		<div>
-			<img class="w-8 h-8 rounded-full" src="https://spng.pngfind.com/pngs/s/5-52097_avatar-png-pic-vector-avatar-icon-png-transparent.png" alt="user photo"/>
+		<div className="flex">
+			<div>Welcome BAck!!
+			<div className="flex">
+			<img class="w-8 h-8 rounded-full" src={user.result.picture} alt="user photo"/>
 			<h1>{user.result.name}</h1>
-			<Button value="Logout"/>
+			</div>
+			</div>
+			<Button value="Logout"
+				clicked = {logout}
+			/>
 			
 		</div>
 	) : (
