@@ -33,19 +33,19 @@ function Nav(){
 		<div>
 			
 				
-<nav class="bordersss border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-  <div class="container flex flex-wrap items-center justify-between mx-auto">
+<nav className="bordersss border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+  <div className="container flex flex-wrap items-center justify-between mx-auto">
   <Link className="flex"	to="/" exact>
       <img className="w-10" src="https://logos-world.net/wp-content/uploads/2020/05/Stranger-Things-Logo.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Secrets!!</span>
+      <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Secrets!!</span>
   </Link>
   <div class="flex items-center md:order-2">
-
+{console.log(user)}
 	{user ? (
 		<div className="flex">
-			<div>Welcome BAck!!
+			<div>Welcome Back!!
 			<div className="flex">
-			<img class="w-8 h-8 rounded-full" src={user.result.picture} alt="user photo"/>
+			<img className="w-8 h-8 bg-red-900 rounded-full" src={user.result.picture} alt="user photo" />
 			<h1>{user.result.name}</h1>
 			</div>
 			</div>

@@ -32,7 +32,8 @@ function Register(props){
 	const handleSubmit = (e)=>{
 		e.preventDefault();
 		console.log(formData);
-		dispatch(signup(formData, navigate));
+		dispatch(signup(formData));
+		navigate('/');
 	};
 
 	const handleChange = (e) =>{
@@ -42,7 +43,7 @@ function Register(props){
 	return(
 		<div>
 
-<section className="my-10">
+<section className="my-20">
   <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
   <Link className="flex items-center mb-6 text-2xl font-semibold text-white" to="/">
           <img className="w-20 h-10 mr-2" src="https://logos-world.net/wp-content/uploads/2020/05/Stranger-Things-Logo.png" alt="logo"/>

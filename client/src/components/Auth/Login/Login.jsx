@@ -5,6 +5,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
 import {useDispatch} from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { signin } from "../../../actions/auth";
 
 
 function Login(props){
@@ -36,6 +37,8 @@ function Login(props){
 	const handleSubmit = (e)=>{
 		e.preventDefault();
 		console.log(formData);
+		dispatch(signin((formData)));
+		// navigate('/');
 	}
 
 	return(
