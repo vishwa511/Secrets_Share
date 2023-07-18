@@ -12,7 +12,7 @@ function Post(props){
 	const dispatch = useDispatch();
 
 	function handleDelete(){
-		if(window.confirm(`Do you want to delete Post of ${props.title} posted by ${props.creator}`)){
+		if(window.confirm(`Do you want to delete Post of ${props.title} posted by ${props.name}`)){
 			dispatch(deletePost(props.id))
 		}
 	}

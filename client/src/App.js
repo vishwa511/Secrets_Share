@@ -7,7 +7,6 @@ import Nav from './components/Navcoponents/Nav'
 import Homepage from './Pages/Homepage';
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Authpage from './Pages/Authpage';
-
 // import memories from './images/memories.jpg'
 
 const App = () =>{

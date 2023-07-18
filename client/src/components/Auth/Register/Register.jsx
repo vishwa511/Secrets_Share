@@ -21,6 +21,7 @@ function Register(props){
 		try {
 			dispatch({type: 'AUTH', data: {result, token}})
 			navigate('/');
+			window.location.reload();
 		} catch (error) {
 			console.log(error);
 		}				
@@ -33,7 +34,6 @@ function Register(props){
 		e.preventDefault();
 		console.log(formData);
 		dispatch(signup(formData));
-		navigate('/');
 	};
 
 	const handleChange = (e) =>{

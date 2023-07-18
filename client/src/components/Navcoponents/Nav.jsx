@@ -26,6 +26,7 @@ function Nav(){
 		dispatch({type: 'LOGOUT'});
 		navigate('/');
 		setUser(null);
+		window.location.reload(true);
 	}
 
 
@@ -55,13 +56,20 @@ function Nav(){
 			
 		</div>
 	) : (
-		<div>
+		<div className="flex">
 			<Link
 				// className="navbar-item"
 				// activeClassName="is-active"
 				to="/auth"
 				exact>
 				<Button component = {Link} to="/auth" value="Login"/>
+			</Link>
+			<Link
+				// className="navbar-item"
+				// activeClassName="is-active"
+				to="/"
+				exact>
+				<Button component = {Link} to="/" value="Home"/>
 			</Link>
 		</div>
 	)}

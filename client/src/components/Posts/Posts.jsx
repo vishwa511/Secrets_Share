@@ -16,7 +16,7 @@ function Posts({setCurrentId, currentId}){
 	return(
 		<div className="flex flex-wrap justify-center w-full">
 			<div className="w-full">
-				{len!=0?
+				{len!==0?
 				<div className="flex items-center justify-center space-x-2">
 					<h1 className="font-mono text-3xl">Here are the posts..Enjoy your memories :)</h1>
 				</div>

@@ -4,18 +4,17 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
 import {useDispatch} from 'react-redux'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { signin } from "../../../actions/auth";
-
 
 function Login(props){
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	// const history = useHistory();
 	const googleSuccess = async(res) =>{
 	const result = res;
 	const token  = res?.jti;
-		
 		console.log(result);
 		console.log(token);
 		
@@ -37,8 +36,7 @@ function Login(props){
 	const handleSubmit = (e)=>{
 		e.preventDefault();
 		console.log(formData);
-		dispatch(signin((formData)));
-		// navigate('/');
+		dispatch(signin(formData));
 	}
 
 	return(
